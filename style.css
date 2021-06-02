@@ -32,6 +32,15 @@ a {
     width: 90%;
     margin: auto;
 }
+.dropdownLink {
+    display: none;
+}
+.sticky {
+    background: rgba(202, 119, 169, 0.8);
+    box-shadow: 0 2px 10px 5px rgba(242, 15, 151,.8);
+    transition: var(--transition);
+    
+}
 /**************
 header
 **************/
@@ -42,11 +51,15 @@ header {
     height: 80vh;
     color: var(--white);
 }
-header nav {
+header .navbar {
     display: flex;
     justify-content: space-between;
-    padding-top: 30px;
-}
+    padding: 25px 0;
+    align-items: center;
+    position: fixed;
+    width: 90%;
+    
+} 
 header nav h2 {
     font-size: 2rem;
     font-weight: 400;
@@ -159,7 +172,6 @@ numbers
 }
 .numbers h2 {
     font-size: 3.2rem;
-    font-weight: ;
 }
 .numbers h2::after {
     display: block;
@@ -466,6 +478,7 @@ bottombar
 .bottombar i {
     color: var(--pink);
 }
+
 /**********************
 responsive
 **********************/
@@ -482,6 +495,9 @@ responsive
         margin: 5px;
         letter-spacing: 0;
         font-size: .8rem;
+    }
+    header .hgroup {
+        padding-top:400px;
     }
     header .hgroup h1 {
         font-size: 2rem;
@@ -604,6 +620,48 @@ responsive
     .bottombar a {
         font-size: 1rem;
     }
+    /*haburger meni*/
+    .navbar {
+        padding: 25px;
+    }
+    ul.topnav li a.nav-link {
+        display: none;
+    }
+    ul.topnav li.dropdownLink {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+    }
+    ul.topnav li.dropdownLink a {
+        text-decoration: none;
+    }
+    
+    ul.topnav.responsive li.dropdownLink { 
+        position: absolute;
+        top: 20px;
+        right: 25px;
+    }
+    ul.topnav.responsive {
+        flex-direction: column;
+        text-align: right;
+        background: transparent;
+        padding: 10px;
+    }
+    ul.topnav.responsive li a.nav-link {
+        display: block;
+        line-height: 1.5;
+        color: var(--white);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    ul.topnav.responsive li {
+        position: relative;
+        top: 15px;
+        right: 25px;
+    }
+
+
     
 }
 
